@@ -25,8 +25,16 @@ config :wal_go, WalGoWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "Rz8EMNgk8Pl5jrDB7ljQuaQLTpfMZE4LEnYYg9Yd5yW5JrQyK1ut4f6cgvAg9lda",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:wal_go, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:wal_go, ~w(--watch)]}
+    npx: [
+      "vite",
+      "build",
+      "--mode",
+      "development",
+      "--watch",
+      "--config",
+      "vite.config.js",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # ## SSL Support
