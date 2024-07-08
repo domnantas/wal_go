@@ -17,7 +17,8 @@ defmodule WalGo.Application do
       # Start a worker by calling: WalGo.Worker.start_link(arg)
       # {WalGo.Worker, arg},
       # Start to serve requests, typically the last entry
-      WalGoWeb.Endpoint
+      WalGoWeb.Endpoint,
+      Turboprop.Cache
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

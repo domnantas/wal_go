@@ -86,6 +86,7 @@ defmodule WalGoWeb do
       # Core UI components and translation
       import WalGoWeb.CoreComponents
       import WalGoWeb.Gettext
+      import WalGoWeb.UI
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
