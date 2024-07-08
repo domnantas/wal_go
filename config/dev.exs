@@ -70,9 +70,6 @@ config :wal_go, WalGoWeb.Endpoint,
     ]
   ]
 
-# Enable dev routes for dashboard and mailbox
-config :wal_go, dev_routes: true
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
