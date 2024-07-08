@@ -90,7 +90,11 @@ defmodule WalGo.Accounts do
 
   """
   def change_user_registration(%User{} = user, attrs \\ %{}) do
-    User.registration_changeset(user, attrs, hash_password: false, validate_email: false)
+    User.registration_changeset(user, attrs,
+      hash_password: false,
+      validate_email_unique: false,
+      validate_callsign_unique: false
+    )
   end
 
   ## Settings
@@ -105,7 +109,7 @@ defmodule WalGo.Accounts do
 
   """
   def change_user_email(user, attrs \\ %{}) do
-    User.email_changeset(user, attrs, validate_email: false)
+    User.email_changeset(user, attrs, validate_email_unique: false)
   end
 
   @doc """

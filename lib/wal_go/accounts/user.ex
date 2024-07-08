@@ -4,10 +4,12 @@ defmodule WalGo.Accounts.User do
 
   schema "users" do
     field :email, :string
+    field :callsign, :string
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :current_password, :string, virtual: true, redact: true
     field :confirmed_at, :utc_datetime
+    field :admin, :boolean, default: false
 
     timestamps(type: :utc_datetime)
   end
@@ -29,7 +31,13 @@ defmodule WalGo.Accounts.User do
       validations on a LiveView form), this option can be set to `false`.
       Defaults to `true`.
 
-    * `:validate_email` - Validates the uniqueness of the email, in case
+    * `:validate_callsign_unique` - Validates the uniqueness of the callsign, in case
+      you don't want to validate the uniqueness of the callsign (like when
+      using this changeset for validations on a LiveView form before
+      submitting the form), this option can be set to `false`.
+      Defaults to `true`.
+
+    * `:validate_email_unique` - Validates the uniqueness of the email, in case
       you don't want to validate the uniqueness of the email (like when
       using this changeset for validations on a LiveView form before
       submitting the form), this option can be set to `false`.
@@ -37,8 +45,9 @@ defmodule WalGo.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:email, :callsign, :password])
     |> validate_email(opts)
+    |> validate_callsign(opts)
     |> validate_password(opts)
   end
 
@@ -48,6 +57,15 @@ defmodule WalGo.Accounts.User do
     |> validate_format(:email, ~r/^[^\s]+@[^\s]+$/, message: "must have the @ sign and no spaces")
     |> validate_length(:email, max: 160)
     |> maybe_validate_unique_email(opts)
+  end
+
+  defp validate_callsign(changeset, opts) do
+    changeset
+    |> validate_required([:callsign])
+    |> validate_format(:callsign, ~r/^[A-Z0-9]+$/,
+      message: "must only contain numbers and uppercase letters"
+    )
+    |> maybe_validate_unique_callsign(opts)
   end
 
   defp validate_password(changeset, opts) do
@@ -79,10 +97,20 @@ defmodule WalGo.Accounts.User do
   end
 
   defp maybe_validate_unique_email(changeset, opts) do
-    if Keyword.get(opts, :validate_email, true) do
+    if Keyword.get(opts, :validate_email_unique, true) do
       changeset
       |> unsafe_validate_unique(:email, WalGo.Repo)
       |> unique_constraint(:email)
+    else
+      changeset
+    end
+  end
+
+  defp maybe_validate_unique_callsign(changeset, opts) do
+    if Keyword.get(opts, :validate_callsign_unique, true) do
+      changeset
+      |> unsafe_validate_unique(:callsign, WalGo.Repo)
+      |> unique_constraint(:callsign)
     else
       changeset
     end

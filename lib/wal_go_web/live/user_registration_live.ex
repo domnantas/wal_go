@@ -32,6 +32,7 @@ defmodule WalGoWeb.UserRegistrationLive do
         </.error>
 
         <.input field={@form[:email]} type="email" label="Email" required />
+        <.input field={@form[:callsign]} type="text" label="Callsign" required />
         <.input field={@form[:password]} type="password" label="Password" required />
 
         <:actions>
