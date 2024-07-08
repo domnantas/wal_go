@@ -1,0 +1,111 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100 != 11 ? 0 : n%10>=2 && (n%100<10||n%100>=20) ? 1 : 2);\n"
+
+msgid "can't be blank"
+msgstr "negali būti tuščias"
+
+msgid "has already been taken"
+msgstr "jau užimtas"
+
+msgid "is invalid"
+msgstr "neteisingas"
+
+msgid "must be accepted"
+msgstr "privalo būti priimtas"
+
+msgid "has invalid format"
+msgstr "yra netinkamo formato"
+
+msgid "has an invalid entry"
+msgstr "turi netinkamą įrašą"
+
+msgid "is reserved"
+msgstr "yra rezervuotas"
+
+msgid "does not match confirmation"
+msgstr "nesutampa su patvirtinimu"
+
+msgid "is still associated with this entry"
+msgstr "vis dar susijęs su šiuo įrašu"
+
+msgid "are still associated with this entry"
+msgstr "vis dar susiję su šiuo įrašu"
+
+msgid "should have %{count} item(s)"
+msgid_plural "should have %{count} item(s)"
+msgstr[0] "turi turėti %{count} elementą"
+msgstr[1] "turi turėti %{count} elementus"
+msgstr[2] "turi turėti %{count} elementų"
+
+msgid "should be %{count} character(s)"
+msgid_plural "should be %{count} character(s)"
+msgstr[0] "turi būti %{count} simbolis"
+msgstr[1] "turi būti %{count} simboliai"
+msgstr[2] "turi būti %{count} simbolių"
+
+msgid "should be %{count} byte(s)"
+msgid_plural "should be %{count} byte(s)"
+msgstr[0] "turi būti %{count} baitas"
+msgstr[1] "turi būti %{count} baitai"
+msgstr[2] "turi būti %{count} baitų"
+
+msgid "should have at least %{count} item(s)"
+msgid_plural "should have at least %{count} item(s)"
+msgstr[0] "turi turėti bent %{count} elementą"
+msgstr[1] "turi turėti bent %{count} elementus"
+msgstr[2] "turi turėti bent %{count} elementų"
+
+msgid "should be at least %{count} character(s)"
+msgid_plural "should be at least %{count} character(s)"
+msgstr[0] "turi būti bent %{count} simbolis"
+msgstr[1] "turi būti bent %{count} simboliai"
+msgstr[2] "turi būti bent %{count} simbolių"
+
+msgid "should be at least %{count} byte(s)"
+msgid_plural "should be at least %{count} byte(s)"
+msgstr[0] "turi būti bent %{count} baitas"
+msgstr[1] "turi būti bent %{count} baitai"
+msgstr[2] "turi būti bent %{count} baitų"
+
+msgid "should have at most %{count} item(s)"
+msgid_plural "should have at most %{count} item(s)"
+msgstr[0] "turi turėti ne daugiau nei %{count} elementą"
+msgstr[1] "turi turėti ne daugiau nei %{count} elementus"
+msgstr[2] "turi turėti ne daugiau nei %{count} elementų"
+
+msgid "should be at most %{count} character(s)"
+msgid_plural "should be at most %{count} character(s)"
+msgstr[0] "turi būti ne daugiau nei %{count} simbolis"
+msgstr[1] "turi būti ne daugiau nei %{count} simboliai"
+msgstr[2] "turi būti ne daugiau nei %{count} simbolių"
+
+msgid "should be at most %{count} byte(s)"
+msgid_plural "should be at most %{count} byte(s)"
+msgstr[0] "turi būti ne daugiau nei %{count} baitas"
+msgstr[1] "turi būti ne daugiau nei %{count} baitai"
+msgstr[2] "turi būti ne daugiau nei %{count} baitų"
+
+msgid "must be less than %{number}"
+msgstr "turi būti mažiau nei %{number}"
+
+msgid "must be greater than %{number}"
+msgstr "turi būti daugiau nei %{number}"
+
+msgid "must be less than or equal to %{number}"
+msgstr "turi būti mažiau arba lygu %{number}"
+
+msgid "must be greater than or equal to %{number}"
+msgstr "turi būti daugiau arba lygu %{number}"
+
+msgid "must be equal to %{number}"
+msgstr "turi būti lygu %{number}"

@@ -31,6 +31,8 @@ config :wal_go, WalGoWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :wal_go, WalGo.Mailer, adapter: Swoosh.Adapters.Local
 
+config :wal_go, WalGoWeb.Gettext, default_locale: "lt", locales: ~w(lt en)
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
