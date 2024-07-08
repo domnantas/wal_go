@@ -11,48 +11,36 @@
     <script defer phx-track-static type="module" src={~p"/assets/app.js"}>
     </script>
   </head>
-  <body class="bg-white antialiased w-full px-6 pb-12">
-    <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
-      <%= if @current_user do %>
-        <li class="text-[0.8125rem] leading-6 text-zinc-900">
-          <%= @current_user.callsign %>
-        </li>
-        <li>
-          <.link
-            href={~p"/users/settings"}
-            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
-          >
-            Settings
+  <body class="bg-white antialiased">
+    <nav class="container h-24 mx-auto flex items-center justify-between border-b border-slate-200 sm:px-4 md:px-2 lg:px-0">
+      <.link href={~p"/"} class="text-3xl font-bold">WAL GO</.link>
+      <div class="flex gap-2">
+        <%= if @current_user do %>
+          <.link href={~p"/users/settings"} class="text-slate-900 px-4 py-2 text-base font-medium">
+            <%= @current_user.callsign %>
           </.link>
-        </li>
-        <li>
           <.link
             href={~p"/users/log_out"}
             method="delete"
-            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+            class="text-red-700 px-4 py-2 text-base font-medium"
           >
             Log out
           </.link>
-        </li>
-      <% else %>
-        <li>
+        <% else %>
+          <.link href={~p"/users/log_in"} class="text-slate-900 px-4 py-2 text-base font-medium">
+            Sign In
+          </.link>
           <.link
             href={~p"/users/register"}
-            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+            class="bg-slate-900 px-6 py-3 rounded-full text-white text-sm font-medium"
           >
-            Register
+            Sign Up
           </.link>
-        </li>
-        <li>
-          <.link
-            href={~p"/users/log_in"}
-            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
-          >
-            Log in
-          </.link>
-        </li>
-      <% end %>
-    </ul>
-    <%= @inner_content %>
+        <% end %>
+      </div>
+    </nav>
+    <main class="container mx-auto sm:px-4 md:px-2 lg:px-0">
+      <%= @inner_content %>
+    </main>
   </body>
 </html>

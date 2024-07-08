@@ -12,7 +12,7 @@ defmodule WalGoWeb.UI do
     <button
       class={
         merge([
-          "phx-submit-loading:opacity-75 rounded bg-zinc-900 hover:bg-zinc-700 py-2 px-4 text-sm font-semibold leading-5 text-white active:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-1",
+          "phx-submit-loading:opacity-75 rounded bg-slate-900 hover:bg-slate-700 py-2 px-4 text-sm font-semibold leading-5 text-white active:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-1",
           @class
         ])
       }
