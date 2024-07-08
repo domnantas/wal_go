@@ -6,9 +6,9 @@ defmodule WalGoWeb.UserRegistrationLive do
 
   def render(assigns) do
     ~H"""
-    <div class="mx-auto max-w-sm">
+    <div class="mx-auto max-w-sm my-20">
       <.header class="text-center">
-        Register for an account
+        Register an account
         <:subtitle>
           Already registered?
           <.link navigate={~p"/users/log_in"} class="font-semibold text-brand hover:underline">
